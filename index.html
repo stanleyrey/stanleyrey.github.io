@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yao Zhang — Senior Application Development Engineer</title>
+  <meta name="description" content="Yao Zhang — Senior Application Development Engineer at KLA. Full-stack software for semiconductor manufacturing: data management, defect inspection analytics, AI prototypes." />
+  <meta property="og:title" content="Yao Zhang — Senior Application Development Engineer" />
+  <meta property="og:description" content="Full-stack software for semiconductor manufacturing: data management, defect inspection analytics, AI prototypes." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://stanleyrey.github.io/" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230f172a'/%3E%3Cg fill='%23f59e0b'%3E%3Crect x='6' y='6' width='8' height='8' rx='1'/%3E%3Crect x='18' y='6' width='8' height='8' rx='1'/%3E%3Crect x='6' y='18' width='8' height='8' rx='1'/%3E%3Crect x='18' y='18' width='8' height='8' rx='1'/%3E%3C/g%3E%3Ccircle cx='16' cy='16' r='3.5' fill='%23ef4444' stroke='%230f172a' stroke-width='1.5'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#about">Skip to content</a>
+
+  <div class="scan-progress" id="scan-progress" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <nav class="nav container" aria-label="Primary">
+      <a class="brand" href="#top" id="brand">YZ<span class="brand-dot">.</span></a>
+      <ul class="nav-links">
+        <li data-side="work"><a href="#about">About</a></li>
+        <li data-side="work"><a href="#experience">Experience</a></li>
+        <li data-side="work"><a href="#publications">Publications</a></li>
+        <li data-side="life"><a href="#photos">Wall</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="side-switch" role="group" aria-label="Switch between work and life">
+        <button type="button" class="side-btn" data-side-target="work" aria-pressed="true">Work</button>
+        <button type="button" class="side-btn" data-side-target="life" aria-pressed="false">Life</button>
+        <span class="side-thumb" aria-hidden="true"></span>
+      </div>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle color theme" title="Toggle theme">
+        <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+        <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero container" data-side="work">
+      <canvas class="hero-canvas" id="hero-canvas" aria-hidden="true"></canvas>
+      <div class="hero-main">
+        <div class="hero-copy">
+          <p class="eyebrow">Sunnyvale, CA · Semiconductor Software</p>
+          <h1 class="hero-title">Yao Zhang</h1>
+          <p class="hero-subtitle">Senior Application Development Engineer at <strong>KLA</strong>, building full-stack data systems that turn inspection and metrology data into yield.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#experience">See my work</a>
+            <a class="btn btn-ghost" href="mailto:stanleyrey@gmail.com">Get in touch</a>
+            <button type="button" class="btn btn-flip" data-side-target="life">Flip to Life <span aria-hidden="true">⟲</span></button>
+          </div>
+        </div>
+        <div class="avatar" aria-hidden="true">
+          <span class="avatar-initials">YZ</span>
+          <img src="assets/profile.jpg" alt="" onerror="this.remove()" />
+        </div>
+      </div>
+      <dl class="hero-stats">
+        <div><dt>Years at KLA</dt><dd><span class="count" data-count="8">8</span>+</dd></div>
+        <div><dt>Papers</dt><dd><span class="count" data-count="9">9</span></dd></div>
+        <div><dt>Patents</dt><dd><span class="count" data-count="3">3</span></dd></div>
+        <div><dt>Citations</dt><dd><span class="count" data-count="250">250</span>+</dd></div>
+      </dl>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section container" data-side="work">
+      <div class="section-head">
+        <span class="section-num">LOT 01 · ABOUT</span>
+        <h2>About</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>I have spent eight years at KLA designing software for semiconductor manufacturing — defect inspection, process control and yield improvement. My work spans system architecture, web application and UI development, backend workflows, tool-to-database connectivity and advanced analytics.</p>
+          <p>Before KLA I completed a Ph.D. at the University of Minnesota, developing graphene devices for bio-medical sensing. That background in device physics and process engineering still shapes how I approach data problems in a fab.</p>
+          <p>Most recently I designed and built the RDC AI Agent — an intranet LLM agent that lets fab engineers query production data in plain language — taking it from prototype to a tested, sandboxed service running inside KlearView.</p>
+        </div>
+        <aside class="skills-card">
+          <h3>Toolbox</h3>
+          <div class="skill-group">
+            <h4>Languages &amp; Web</h4>
+            <ul class="tags">
+              <li>Python</li><li>JavaScript</li><li>PHP</li><li>HTML</li><li>CSS</li><li>React</li><li>Node.js</li><li>jQuery</li><li>MySQL</li><li>Shell</li><li>Matlab</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h4>Infrastructure &amp; QA</h4>
+            <ul class="tags">
+              <li>Linux</li><li>Docker</li><li>Git</li><li>CI/CD</li><li>Selenium</li><li>Playwright</li><li>FastAPI</li><li>FAISS</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h4>Domain</h4>
+            <ul class="tags">
+              <li>Yield Improvement</li><li>Defect Inspection</li><li>MES Integration</li><li>Photolithography</li><li>ALD / RIE</li><li>Nanotechnology</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+
+      <div class="now-grid now-grid-single">
+        <div class="ask-card">
+          <h3>Ask me about</h3>
+          <ul class="tags tags-lg">
+            <li>EUV blank defects</li><li>Mask-shop data models</li><li>LLM agents next to production data</li><li>Graphene varactors</li><li>NL-to-SQL that is actually right</li><li>Shipping internal tools people use</li><li>Minnesota winters</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="section container" data-side="work">
+      <div class="section-head">
+        <span class="section-num">LOT 02 · EXPERIENCE</span>
+        <h2>Experience</h2>
+      </div>
+
+      <div class="timeline" aria-label="Career timeline">
+        <div class="timeline-rail"></div>
+        <ol class="timeline-marks">
+          <li style="--at:0%"><span class="tl-year">2009</span><span class="tl-label">Nanjing University · B.Sc.</span></li>
+          <li style="--at:23.5%"><span class="tl-year">2013</span><span class="tl-label">UMN · Ph.D. graphene sensors</span></li>
+          <li style="--at:53%"><span class="tl-year">2018</span><span class="tl-label">KLA · KlearView</span></li>
+          <li style="--at:64.5%"><span class="tl-year">2020</span><span class="tl-label">EUV BDO · patent</span></li>
+          <li style="--at:88%"><span class="tl-year">2024</span><span class="tl-label">RDC AI Agent</span></li>
+          <li style="--at:100%" class="tl-now"><span class="tl-year">now</span><span class="tl-label"></span></li>
+        </ol>
+        <div class="timeline-spans">
+          <span class="tl-span" data-for="klearview" style="--from:53%;--to:100%">KlearView</span>
+          <span class="tl-span" data-for="bdo" style="--from:64.5%;--to:100%">BDO</span>
+          <span class="tl-span" data-for="ai-agent" style="--from:88%;--to:100%">AI Agent</span>
+        </div>
+      </div>
+
+      <article class="role">
+        <header class="role-head">
+          <div>
+            <h3>Senior Applications Development Engineer</h3>
+            <p class="role-org">KLA · Milpitas, CA</p>
+          </div>
+          <p class="role-dates">2018 — Present</p>
+        </header>
+
+        <div class="featured-list">
+
+          <!-- ===== Featured 1: KlearView ===== -->
+          <article class="featured" id="klearview">
+            <header class="featured-head">
+              <p class="featured-kicker">Flagship product · deployed at six mask shops worldwide</p>
+              <h4>KlearView — the memory of a mask shop</h4>
+              <p class="featured-lede">A photomask passes through a dozen tools on its way to the fab, and every one of them writes down what it saw — in its own format, its own coordinate system, on its own hard drive. KlearView gathers all of it into a single living record, so that a defect first spotted on a bare blank can be followed through writing, inspection, repair and shipping, all the way to the wafer it eventually prints.</p>
+            </header>
+
+            <figure class="featured-hero" aria-label="Illustration: streams of data from mask-shop tools converge into the KlearView hub and flow out as reviewer, defect-history and overlay views, with a feedback loop from the wafer fab">
+              <svg viewBox="0 0 960 392" xmlns="http://www.w3.org/2000/svg" role="img">
+                <defs>
+                  <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="10" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                  <radialGradient id="hubGrad" cx="50%" cy="40%" r="70%"><stop offset="0" stop-color="var(--accent-soft)"/><stop offset="1" stop-color="var(--bg-elev)"/></radialGradient>
+                  <marker id="arrA" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="var(--accent)"/></marker>
+                </defs>
+
+                <!-- source tools -->
+                <g class="fig-sources" font-family="var(--font-sans)" font-size="12">
+                  <g class="kv-src" data-target="reviewer dsa" transform="translate(20,34)"><rect class="src" width="168" height="36" rx="18"/><circle cx="18" cy="18" r="6" fill="#60a5fa"/><text x="34" y="22">Blank inspection</text></g>
+                  <g class="kv-src" data-target="reviewer dsa" transform="translate(20,86)"><rect class="src" width="168" height="36" rx="18"/><circle cx="18" cy="18" r="6" fill="#a78bfa"/><text x="34" y="22">Pattern inspection</text></g>
+                  <g class="kv-src" data-target="reviewer dsa" transform="translate(20,138)"><rect class="src" width="168" height="36" rx="18"/><circle cx="18" cy="18" r="6" fill="#f472b6"/><text x="34" y="22">Review SEM · AIMS</text></g>
+                  <g class="kv-src" data-target="dsa" transform="translate(20,190)"><rect class="src" width="168" height="36" rx="18"/><circle cx="18" cy="18" r="6" fill="#fb923c"/><text x="34" y="22">Repair</text></g>
+                  <g class="kv-src" data-target="overlay" transform="translate(20,242)"><rect class="src" width="168" height="36" rx="18"/><circle cx="18" cy="18" r="6" fill="#34d399"/><text x="34" y="22">CD · Registration</text></g>
+                  <g class="kv-src" data-target="overlay" transform="translate(20,294)"><rect class="src" width="168" height="36" rx="18"/><circle cx="18" cy="18" r="6" fill="#facc15"/><text x="34" y="22">MES · process logs</text></g>
+                </g>
+
+                <!-- ribbons into hub -->
+                <g fill="none" stroke-width="3" stroke-linecap="round" opacity="0.85">
+                  <path class="kv-ribbon" data-idx="0" d="M188 52 C 300 52, 330 190, 408 190" stroke="#60a5fa"/>
+                  <path class="kv-ribbon" data-idx="1" d="M188 104 C 300 104, 330 190, 408 190" stroke="#a78bfa"/>
+                  <path class="kv-ribbon" data-idx="2" d="M188 156 C 300 156, 330 190, 408 190" stroke="#f472b6"/>
+                  <path class="kv-ribbon" data-idx="3" d="M188 208 C 300 208, 330 190, 408 190" stroke="#fb923c"/>
+                  <path class="kv-ribbon" data-idx="4" d="M188 260 C 300 260, 330 190, 408 190" stroke="#34d399"/>
+                  <path class="kv-ribbon" data-idx="5" d="M188 312 C 300 312, 330 190, 408 190" stroke="#facc15"/>
+                </g>
+                <g class="fig-flow" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-dasharray="2 14" opacity="0.9">
+                  <path d="M188 52 C 300 52, 330 190, 408 190"/>
+                  <path d="M188 104 C 300 104, 330 190, 408 190"/>
+                  <path d="M188 156 C 300 156, 330 190, 408 190"/>
+                  <path d="M188 208 C 300 208, 330 190, 408 190"/>
+                  <path d="M188 260 C 300 260, 330 190, 408 190"/>
+                  <path d="M188 312 C 300 312, 330 190, 408 190"/>
+                </g>
+
+                <!-- hub -->
+                <circle cx="480" cy="190" r="86" fill="var(--accent)" opacity="0.18" filter="url(#glow)"/>
+                <circle cx="480" cy="190" r="72" fill="url(#hubGrad)" stroke="var(--accent)" stroke-width="2"/>
+                <circle cx="480" cy="190" r="72" fill="none" stroke="var(--accent)" stroke-width="1" stroke-dasharray="3 6" opacity="0.6" class="fig-spin"/>
+                <!-- database glyph -->
+                <g transform="translate(480,172)" fill="none" stroke="var(--accent-fg)" stroke-width="2">
+                  <ellipse cx="0" cy="-14" rx="22" ry="7" fill="var(--accent-soft)"/>
+                  <path d="M-22 -14 V10 A22 7 0 0 0 22 10 V-14"/>
+                  <path d="M-22 -2 A22 7 0 0 0 22 -2"/>
+                </g>
+                <text x="480" y="212" text-anchor="middle" font-family="var(--font-serif)" font-weight="700" font-size="17" fill="var(--fg)">KlearView</text>
+                <text x="480" y="282" text-anchor="middle" font-family="var(--font-mono)" font-size="9.5" fill="var(--fg-muted)">one data model · one coordinate system</text>
+
+                <!-- outputs -->
+                <g fill="none" stroke="var(--accent)" stroke-width="2" marker-end="url(#arrA)">
+                  <path d="M548 160 C 600 110, 620 78, 672 78"/>
+                  <path d="M552 190 H672"/>
+                  <path d="M548 220 C 600 270, 620 302, 672 302"/>
+                </g>
+
+                <!-- card: Common reviewer -->
+                <g class="kv-card" id="kv-reviewer" transform="translate(680,36)">
+                  <rect class="card" width="260" height="84" rx="10"/>
+                  <text x="14" y="20" font-family="var(--font-sans)" font-size="12" font-weight="600" fill="var(--fg)">Common Reviewer</text>
+                  <rect x="14" y="30" width="44" height="44" rx="4" fill="var(--fig-ml)"/>
+                  <g fill="var(--fig-abs)"><rect x="18" y="34" width="12" height="36"/><rect x="34" y="34" width="20" height="14"/><rect x="34" y="54" width="20" height="16"/></g>
+                  <circle cx="44" cy="51" r="4" fill="var(--fig-bad)"/>
+                  <g fill="var(--line)"><rect x="68" y="34" width="178" height="6" rx="3"/><rect x="68" y="48" width="140" height="6" rx="3"/><rect x="68" y="62" width="160" height="6" rx="3"/></g>
+                  <rect x="68" y="34" width="60" height="6" rx="3" fill="var(--accent)"/>
+                </g>
+
+                <!-- card: DSA -->
+                <g class="kv-card" id="kv-dsa" transform="translate(680,148)">
+                  <rect class="card" width="260" height="84" rx="10"/>
+                  <text x="14" y="20" font-family="var(--font-sans)" font-size="12" font-weight="600" fill="var(--fg)">Defect Source Analysis</text>
+                  <line x1="30" y1="54" x2="230" y2="54" stroke="var(--line)" stroke-width="2"/>
+                  <g font-family="var(--font-mono)" font-size="8.5" fill="var(--fg-muted)" text-anchor="middle">
+                    <rect x="16" y="40" width="28" height="28" rx="4" fill="#60a5fa" opacity="0.9"/><circle cx="30" cy="54" r="3.5" fill="#fff"/><text x="30" y="80">blank</text>
+                    <rect x="82" y="40" width="28" height="28" rx="4" fill="#a78bfa" opacity="0.9"/><circle cx="96" cy="54" r="3.5" fill="#fff"/><text x="96" y="80">pattern</text>
+                    <rect x="148" y="40" width="28" height="28" rx="4" fill="#f472b6" opacity="0.9"/><circle cx="162" cy="54" r="3.5" fill="#fff"/><text x="162" y="80">SEM</text>
+                    <rect x="214" y="40" width="28" height="28" rx="4" fill="#fb923c" opacity="0.9"/><path d="M223 54 l5 5 l9 -10" stroke="#fff" stroke-width="2" fill="none"/><text x="228" y="80">repaired</text>
+                  </g>
+                </g>
+
+                <!-- card: Overlay -->
+                <g class="kv-card" id="kv-overlay" transform="translate(680,260)">
+                  <rect class="card" width="260" height="84" rx="10"/>
+                  <text x="14" y="20" font-family="var(--font-sans)" font-size="12" font-weight="600" fill="var(--fg)">Overlay · Query · Report</text>
+                  <rect x="14" y="30" width="46" height="46" rx="4" fill="#60a5fa" opacity="0.35"/>
+                  <rect x="26" y="38" width="46" height="46" rx="4" fill="#a78bfa" opacity="0.35" transform="translate(0,-6)"/>
+                  <rect x="38" y="30" width="46" height="46" rx="4" fill="#34d399" opacity="0.35"/>
+                  <g fill="var(--fig-bad)"><circle cx="52" cy="50" r="3"/><circle cx="56" cy="54" r="3"/><circle cx="50" cy="56" r="3"/></g>
+                  <g font-family="var(--font-mono)" font-size="9" fill="var(--fg-muted)"><text x="100" y="44">hotspot across 12 lots</text><text x="100" y="60">CSV · XML · JSON export</text><text x="100" y="76">OQC → IQC report</text></g>
+                </g>
+
+                <!-- fab feedback loop -->
+                <path d="M930 348 V370 H250 C 226 370, 222 338, 252 316 C 300 282, 360 268, 420 258" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="6 5" marker-end="url(#arrA)" opacity="0.8"/>
+                <g transform="translate(430,370)" font-family="var(--font-mono)" font-size="10" fill="var(--accent-fg)">
+                  <rect x="-10" y="-14" width="370" height="26" rx="13" fill="var(--accent-soft)" stroke="var(--accent)"/>
+                  <text x="175" y="4" text-anchor="middle">wafer fab → reticle requal · wafer-to-reticle repeater match</text>
+                </g>
+              </svg>
+            </figure>
+
+            <div class="featured-body">
+              <div class="featured-story">
+                <p>I led KlearView's development from the first production deployment through six customer sites, owning the architecture, the full-stack implementation and the release train, and co-authored the SPIE paper that laid out what a mask-shop data system has to be.</p>
+                <p>The hard part was never storing the data. It was making data from a Lasertec blank inspector, a KLA pattern inspector, a review SEM and a registration tool <em>mean the same thing</em> — one common mask data model, one coordinate convention, with converters for every tool family and MES link in the shop. Once that was true, everything else became possible.</p>
+                <p>Operators get a single <strong>Common Reviewer</strong> for every inspector, with native tool images, SEM review, design clips, cutline profiles and CD measurements side by side. Engineers get <strong>Defect Source Analysis</strong>: a match-up engine that recognizes the same defect across successive inspections, so its whole biography — added, repaired, cleaned, grown — sits on one row. Overlay views stack lots to expose hotspots; cross-database queries join inspection results with process history; scheduled reports hand each mask from the shop's outgoing check to the fab's incoming one.</p>
+                <p>And the record does not stop at shipping. KlearView collapses wafer inspection fields back onto the mask and matches repeaters to mask defects, so when a fab finds a defect growing under exposure months later, the shop can see exactly what it looked like the day it left.</p>
+              </div>
+              <ol class="featured-steps">
+                <li><strong>Ingest</strong><span>Converters for a dozen tool families normalize vendor formats and coordinate systems into one schema.</span></li>
+                <li><strong>Store</strong><span>A SQL schema built for 24×7 production, linked to manufacturing databases, with snapshot and replication.</span></li>
+                <li><strong>Analyze</strong><span>Reviewer, DSA, overlay, query and automated reporting — trained once, used on every tool.</span></li>
+                <li><strong>Close the loop</strong><span>Reticle requal and wafer-to-reticle mapping bring fab results back to the mask that caused them.</span></li>
+                <li><strong>Ship it</strong><span>CI/CD delivering 200+ feature updates a year; QA automation that cut test cycle time by 70%.</span></li>
+              </ol>
+            </div>
+
+            <dl class="featured-metrics">
+              <div><dt>Mask shops in production</dt><dd>6</dd></div>
+              <div><dt>Tool families integrated</dt><dd>12+</dd></div>
+              <div><dt>Feature updates / year</dt><dd>200+</dd></div>
+              <div><dt>QA cycle time</dt><dd>−70%</dd></div>
+            </dl>
+            <p class="featured-foot">Price, Hurt, Carlson, Gardner, <strong>Zhang</strong> et al., <em>Need for Comprehensive Reticle Data Management and Analytics</em>, Proc. SPIE 11518, Photomask Technology 2020.</p>
+          </article>
+
+          <!-- ===== Featured 2: BDO ===== -->
+          <article class="featured" id="bdo">
+            <header class="featured-head">
+              <p class="featured-kicker">Algorithm &amp; production system · US Patent 11119404B2</p>
+              <h4>EUV Blank Defect Avoidance — hiding what cannot be fixed</h4>
+              <p class="featured-lede">An EUV mask blank is a forty-layer mirror polished to atomic smoothness, and most of them still arrive with five to ten defects buried where no repair tool can reach. But a defect under the <em>absorber</em> — the dark part of the circuit pattern — never prints. BDO slides and rotates the entire chip design across the blank until as many critical defects as possible vanish underneath it: a sliding-tile puzzle played at nanometre precision, solved in minutes.</p>
+            </header>
+
+            <figure class="featured-hero bdo-figure" id="bdo-figure" data-state="before" aria-label="Illustration: a mask blank with defects on exposed multilayer before optimization, and the same blank after the pattern is shifted and rotated so the defects sit under absorber; a score gauge rises from 0.3 to 0.9">
+              <svg viewBox="0 0 960 380" xmlns="http://www.w3.org/2000/svg" role="img">
+                <defs>
+                  <linearGradient id="mlGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--fig-ml-hi)"/><stop offset="1" stop-color="var(--fig-ml)"/></linearGradient>
+                  <linearGradient id="gaugeGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="var(--fig-bad)"/><stop offset="0.5" stop-color="#f59e0b"/><stop offset="1" stop-color="var(--fig-good)"/></linearGradient>
+                  <marker id="arrB" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="var(--accent)"/></marker>
+                </defs>
+
+                <!-- BEFORE blank -->
+                <g class="bdo-before" transform="translate(40,50)">
+                  <text x="140" y="-22" text-anchor="middle" font-family="var(--font-sans)" font-size="13" font-weight="600" fill="var(--fg)">Incoming blank · 7 defects</text>
+                  <rect width="280" height="280" rx="10" fill="url(#mlGrad)" stroke="var(--line)"/>
+                  <!-- absorber "city blocks" -->
+                  <g class="bdo-pattern" fill="var(--fig-abs)">
+                    <rect x="20" y="20" width="70" height="100" rx="3"/><rect x="110" y="20" width="60" height="60" rx="3"/><rect x="190" y="20" width="70" height="100" rx="3"/>
+                    <rect x="20" y="140" width="100" height="60" rx="3"/><rect x="140" y="100" width="60" height="120" rx="3"/><rect x="220" y="140" width="40" height="120" rx="3"/>
+                    <rect x="20" y="220" width="100" height="40" rx="3"/><rect x="140" y="240" width="60" height="20" rx="3"/>
+                  </g>
+                  <!-- exposed defects: pulsing -->
+                  <g class="fig-pulse" fill="none" stroke="var(--fig-bad)" stroke-width="1.5">
+                    <circle cx="100" cy="70" r="12"/><circle cx="175" cy="80" r="12"/><circle cx="130" cy="210" r="12"/><circle cx="60" cy="128" r="12"/>
+                  </g>
+                  <g fill="var(--fig-bad)" stroke="#fff" stroke-width="1.5">
+                    <circle cx="100" cy="70" r="5.5"/><circle cx="175" cy="80" r="5.5"/><circle cx="130" cy="210" r="5.5"/><circle cx="60" cy="128" r="5.5"/>
+                  </g>
+                  <g fill="var(--fig-good)" stroke="#fff" stroke-width="1.5">
+                    <circle cx="240" cy="60" r="5.5"/><circle cx="50" cy="240" r="5.5"/><circle cx="150" cy="165" r="5.5"/>
+                  </g>
+                  <text x="140" y="300" text-anchor="middle" font-family="var(--font-mono)" font-size="10.5" fill="var(--fig-bad)">4 defects on exposed multilayer → will print</text>
+                </g>
+
+                <!-- CENTER: transform + gauge + cross-section -->
+                <g transform="translate(340,0)">
+                  <!-- rotate / shift glyph -->
+                  <g transform="translate(140,120)">
+                    <circle r="44" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+                    <path d="M-30 -6 A 31 31 0 1 1 -6 30" fill="none" stroke="var(--accent)" stroke-width="3" stroke-linecap="round" marker-end="url(#arrB)"/>
+                    <path d="M-12 12 L12 -12" stroke="var(--accent-fg)" stroke-width="3" stroke-linecap="round" marker-end="url(#arrB)"/>
+                  </g>
+                  <text x="140" y="186" text-anchor="middle" font-family="var(--font-mono)" font-size="10.5" fill="var(--fg)">shift Δx Δy ≤ 200 µm · rotate 0/90/180/270°</text>
+                  <text x="140" y="202" text-anchor="middle" font-family="var(--font-mono)" font-size="9.5" fill="var(--fg-muted)">BOBYQA search over a polygon cost function</text>
+
+                  <!-- gauge -->
+                  <g transform="translate(140,322)">
+                    <path d="M-80 0 A 80 80 0 0 1 80 0" fill="none" stroke="var(--line)" stroke-width="12" stroke-linecap="round"/>
+                    <path d="M-80 0 A 80 80 0 0 1 80 0" fill="none" stroke="url(#gaugeGrad)" stroke-width="12" stroke-linecap="round" opacity="0.9"/>
+                    <!-- needles: before (0.3 → angle 54° from left), after (0.9) -->
+                    <g stroke-width="3" stroke-linecap="round">
+                      <line x1="0" y1="0" x2="-47" y2="-65" stroke="var(--fig-bad)" stroke-dasharray="4 4" opacity="0.7"/>
+                      <line x1="0" y1="0" x2="65" y2="-47" stroke="var(--fig-good)" class="bdo-needle"/>
+                    </g>
+                    <circle r="5" fill="var(--fg)"/>
+                    <text x="-80" y="20" text-anchor="middle" font-family="var(--font-mono)" font-size="10" fill="var(--fg-muted)">0</text>
+                    <text x="80" y="20" text-anchor="middle" font-family="var(--font-mono)" font-size="10" fill="var(--fg-muted)">1</text>
+                    <text x="0" y="36" text-anchor="middle" font-family="var(--font-sans)" font-size="12" fill="var(--fg)">blank score <tspan fill="var(--fig-bad)">0.3</tspan> → <tspan fill="var(--fig-good)" font-weight="700">0.9</tspan></text>
+                  </g>
+
+                  <!-- cross-section insets -->
+                  <g transform="translate(10,18)" font-family="var(--font-mono)" font-size="9" fill="var(--fg-muted)">
+                    <g>
+                      <rect width="122" height="40" rx="4" fill="var(--bg-elev)" stroke="var(--line)"/>
+                      <g stroke="var(--fig-ml)" stroke-width="2"><path d="M8 32 H48 Q61 18 74 32 H114"/><path d="M8 26 H48 Q61 12 74 26 H114"/><path d="M8 20 H48 Q61 6 74 20 H114"/></g>
+                      <circle cx="61" cy="10" r="3" fill="var(--fig-bad)"/>
+                      <text x="61" y="54" text-anchor="middle">on multilayer → prints</text>
+                    </g>
+                    <g transform="translate(138,0)">
+                      <rect width="122" height="40" rx="4" fill="var(--bg-elev)" stroke="var(--line)"/>
+                      <g stroke="var(--fig-ml)" stroke-width="2"><path d="M8 32 H48 Q61 18 74 32 H114"/><path d="M8 26 H48 Q61 12 74 26 H114"/></g>
+                      <rect x="36" y="6" width="50" height="9" rx="2" fill="var(--fig-abs)"/>
+                      <circle cx="61" cy="10" r="3" fill="var(--fig-good)"/>
+                      <text x="61" y="54" text-anchor="middle">under absorber → hidden</text>
+                    </g>
+                  </g>
+                </g>
+
+                <!-- AFTER blank -->
+                <g class="bdo-after" transform="translate(640,50)">
+                  <text x="140" y="-22" text-anchor="middle" font-family="var(--font-sans)" font-size="13" font-weight="600" fill="var(--fg)">Optimized placement</text>
+                  <rect width="280" height="280" rx="10" fill="url(#mlGrad)" stroke="var(--accent)" stroke-width="1.5"/>
+                  <g fill="var(--fig-abs)">
+                    <rect x="80" y="40" width="120" height="60" rx="3"/><rect x="40" y="110" width="110" height="50" rx="3"/><rect x="110" y="180" width="70" height="50" rx="3"/>
+                    <rect x="210" y="30" width="50" height="80" rx="3"/><rect x="20" y="220" width="60" height="40" rx="3"/><rect x="180" y="120" width="80" height="40" rx="3"/><rect x="200" y="190" width="60" height="70" rx="3"/>
+                  </g>
+                  <g fill="var(--fig-good)" stroke="#fff" stroke-width="1.5">
+                    <circle cx="100" cy="70" r="5.5"/><circle cx="175" cy="80" r="5.5"/><circle cx="130" cy="210" r="5.5"/><circle cx="60" cy="128" r="5.5"/><circle cx="240" cy="60" r="5.5"/><circle cx="50" cy="240" r="5.5"/>
+                  </g>
+                  <g fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M97.5 70 l2 2 l3.5 -4"/><path d="M172.5 80 l2 2 l3.5 -4"/><path d="M127.5 210 l2 2 l3.5 -4"/><path d="M57.5 128 l2 2 l3.5 -4"/><path d="M237.5 60 l2 2 l3.5 -4"/><path d="M47.5 240 l2 2 l3.5 -4"/>
+                  </g>
+                  <circle cx="150" cy="165" r="5.5" fill="var(--fig-bad)" stroke="#fff" stroke-width="1.5"/>
+                  <text x="160" y="169" font-family="var(--font-mono)" font-size="8.5" fill="var(--fg-muted)">← non-critical fill</text>
+                  <text x="140" y="300" text-anchor="middle" font-family="var(--font-mono)" font-size="10.5" fill="var(--fig-good)">6 hidden under absorber · 1 left in sacrificial area</text>
+                </g>
+              </svg>
+              <button type="button" class="fig-action" id="bdo-run">Run optimization</button>
+            </figure>
+
+            <div class="featured-body">
+              <div class="featured-story">
+                <p>I built the optimization core and the production system around it, and I am the first inventor on the patent. In pilot production it turned mid- and low-grade blanks — the ones a shop would otherwise scrap or gamble on — into masks that yield, lifting yield on affected lots by more than 30% while cutting the cost of incoming material.</p>
+                <p>The trick is that you cannot hide what you cannot locate. Blank inspectors report positions with 200–300 µm of error, so a safety buffer large enough to be sure would leave almost no blank usable. BDO re-registers every critical defect on a mask registration tool, using bright- and dark-field illumination to pin it down to the sub-30 nm range. Only then is the puzzle solvable.</p>
+                <p>The solver itself scores each candidate placement on two things: how much of each defect lies on exposed multilayer, and how <em>delicate</em> the pattern it touches is — measured by edge perimeter, because fine, high-MEEF features are hurt far more by the same bump than a wide pad. Defects are weighted by origin, size and repairability, with buried multilayer defects weighing most. A BOBYQA nonlinear search then finds the best shift inside the e-beam writer's ~200 µm window and the best of four 90° rotations, allowing for residual placement uncertainty. In the paper's test case, 8–9 of 13 defects were certain to print before; after, one.</p>
+                <p>Because the shop keeps a pool of pre-registered blanks in KlearView, every new tape-out is scored against all of them in minutes, and the writer operator simply picks the blank with the lowest risk. The output file carries the shift and the rotation instruction straight to the tool — no manual steps, no transcription errors.</p>
+              </div>
+              <ol class="featured-steps">
+                <li><strong>Classify</strong><span>Automatic classification of every blank inspection into critical and non-critical bins, weighted by source and size.</span></li>
+                <li><strong>Locate</strong><span>Re-registration on a mask registration tool: from hundreds of µm of uncertainty to sub-30 nm.</span></li>
+                <li><strong>Optimize</strong><span>Polygon cost = exposed area + pattern complexity; BOBYQA over shift and 90° rotation.</span></li>
+                <li><strong>Verify</strong><span>Aerial-image printability simulation confirms the hidden defects stay hidden.</span></li>
+                <li><strong>Choose</strong><span>A 0–1 score for every unused blank in the database; the operator picks the lowest-risk match.</span></li>
+              </ol>
+            </div>
+
+            <dl class="featured-metrics">
+              <div><dt>Yield on affected lots</dt><dd>+30%</dd></div>
+              <div><dt>Defect location accuracy</dt><dd>&lt;30 nm</dd></div>
+              <div><dt>Writer shift window</dt><dd>200 µm</dd></div>
+              <div><dt>Printable defects per blank</dt><dd>5–10 → ≤1</dd></div>
+            </dl>
+            <p class="featured-foot"><strong>Zhang</strong> et al., <em>System and method for reducing printable defects on extreme ultraviolet pattern masks</em>, US 11119404B2 · Hurt, Carlson, <strong>Zhang</strong> et al., <em>Comprehensive Extreme Ultraviolet Blank Defect Avoidance System</em>, SPIE Photomask Technology 2022.</p>
+          </article>
+
+          <!-- ===== Featured 3: RDC AI Agent ===== -->
+          <article class="featured" id="ai-agent">
+            <header class="featured-head">
+              <p class="featured-kicker">Applied AI · from prototype to production service</p>
+              <h4>RDC AI Agent — ask the fab a question</h4>
+              <p class="featured-lede">A process engineer knows exactly what she wants to know — <em>"which writer produced the lots with the most repeating defects last quarter, and did it change after the PM?"</em> — but the answer is three joins, a coordinate conversion and a chart away, and the one person who can write that query is busy. The RDC AI Agent lets her ask in plain language. It lives inside KlearView, on the fab's own network with no internet access, and answers with real SQL against the production database, a chart and a written analysis, streamed as it works.</p>
+            </header>
+
+            <figure class="featured-hero ai-figure" id="ai-figure" aria-label="Illustration: an engineer asks a question; the agent core, surrounded by orbiting tools for SQL, Python, plotting and images and grounded by a knowledge layer, produces an answer card with a chart, SQL and analysis — all inside a security envelope">
+              <svg viewBox="0 0 960 380" xmlns="http://www.w3.org/2000/svg" role="img">
+                <defs>
+                  <radialGradient id="coreGrad" cx="50%" cy="30%" r="75%"><stop offset="0" stop-color="var(--accent-soft)"/><stop offset="0.45" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent-fg)"/></radialGradient>
+                  <marker id="arrC" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="var(--accent)"/></marker>
+                </defs>
+
+                <!-- security envelope -->
+                <rect x="296" y="14" width="400" height="352" rx="22" fill="var(--accent)" opacity="0.05"/>
+                <rect x="296" y="14" width="400" height="352" rx="22" fill="none" stroke="var(--accent)" stroke-width="1.2" stroke-dasharray="7 5" opacity="0.7"/>
+                <g transform="translate(496,30)" font-family="var(--font-mono)" font-size="9.5" fill="var(--accent-fg)">
+                  <rect x="-178" y="-11" width="356" height="20" rx="10" fill="var(--accent-soft)" stroke="var(--accent)"/>
+                  <text x="0" y="3" text-anchor="middle">JWT · host allow-list · read-only SQL · sandbox · no egress</text>
+                </g>
+
+                <!-- engineer -->
+                <g transform="translate(60,250)">
+                  <path d="M-30 30 C -30 -2, 30 -2, 30 30 Z" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+                  <circle cx="0" cy="-22" r="17" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+                  <text x="0" y="52" text-anchor="middle" font-family="var(--font-sans)" font-size="11" fill="var(--fg-muted)">process engineer</text>
+                </g>
+                <!-- speech bubble -->
+                <g class="ai-bubble" transform="translate(24,80)" role="button" tabindex="0" aria-label="Replay the answer">
+                  <path d="M0 14 Q0 0 14 0 H236 Q250 0 250 14 V96 Q250 110 236 110 H60 L40 130 L44 110 H14 Q0 110 0 96 Z" fill="var(--bg-elev)" stroke="var(--line)"/>
+                  <g font-family="var(--font-sans)" font-size="12" fill="var(--fg)">
+                    <text x="16" y="28">“Which writer had the most</text>
+                    <text x="16" y="46">repeating defects last quarter,</text>
+                    <text x="16" y="64">and did it change after the PM?”</text>
+                  </g>
+                  <text x="16" y="94" font-family="var(--font-mono)" font-size="9.5" fill="var(--fg-muted)">plain language · <tspan fill="var(--accent)">click to replay</tspan></text>
+                </g>
+                <path d="M274 150 C 300 150, 310 190, 340 190" fill="none" stroke="var(--accent)" stroke-width="2" marker-end="url(#arrC)"/>
+
+                <!-- agent core with orbit -->
+                <g transform="translate(496,200)">
+                  <circle r="118" fill="none" stroke="var(--line)" stroke-width="1" stroke-dasharray="2 6"/>
+                  <circle r="62" fill="url(#coreGrad)" opacity="0.95"/>
+                  <circle r="62" fill="none" stroke="var(--accent)" stroke-width="2"/>
+                  <!-- brain-ish nodes -->
+                  <g fill="#fff" opacity="0.9">
+                    <circle cx="-18" cy="-14" r="4"/><circle cx="14" cy="-20" r="4"/><circle cx="22" cy="10" r="4"/><circle cx="-10" cy="16" r="4"/><circle cx="-26" cy="6" r="3"/>
+                  </g>
+                  <g stroke="#fff" stroke-width="1.2" opacity="0.7" fill="none"><path d="M-18 -14 L14 -20 L22 10 L-10 16 L-18 -14 M-26 6 L-10 16 M-26 6 L-18 -14"/></g>
+                  <text x="0" y="40" text-anchor="middle" font-family="var(--font-serif)" font-weight="700" font-size="13" fill="var(--bg)">ReAct agent</text>
+                  <text x="0" y="53" text-anchor="middle" font-family="var(--font-mono)" font-size="8.5" font-weight="700" fill="var(--bg)">router · plan · act · reflect</text>
+
+                  <!-- orbiting tools -->
+                  <g class="fig-orbit">
+                    <g transform="translate(0,-118)"><g class="fig-counter"><rect x="-34" y="-14" width="68" height="28" rx="14" class="tool"/><text y="4" text-anchor="middle" font-family="var(--font-mono)" font-size="10" fill="var(--fg)">SQL</text></g></g>
+                    <g transform="translate(118,0)"><g class="fig-counter"><rect x="-34" y="-14" width="68" height="28" rx="14" class="tool"/><text y="4" text-anchor="middle" font-family="var(--font-mono)" font-size="10" fill="var(--fg)">Python</text></g></g>
+                    <g transform="translate(0,118)"><g class="fig-counter"><rect x="-34" y="-14" width="68" height="28" rx="14" class="tool"/><text y="4" text-anchor="middle" font-family="var(--font-mono)" font-size="10" fill="var(--fg)">plot</text></g></g>
+                    <g transform="translate(-118,0)"><g class="fig-counter"><rect x="-34" y="-14" width="68" height="28" rx="14" class="tool"/><text y="4" text-anchor="middle" font-family="var(--font-mono)" font-size="10" fill="var(--fg)">images</text></g></g>
+                  </g>
+                </g>
+
+                <!-- knowledge layer base -->
+                <g transform="translate(496,344)" font-family="var(--font-mono)" font-size="9.5" fill="var(--fg-muted)">
+                  <rect x="-170" y="-12" width="340" height="22" rx="6" fill="var(--bg-elev)" stroke="var(--line)"/>
+                  <text x="0" y="3" text-anchor="middle">grounded by: schema invariants · fab lexicon · skills · goldens</text>
+                </g>
+
+                <path d="M652 190 C 680 190, 690 150, 718 150" fill="none" stroke="var(--accent)" stroke-width="2" marker-end="url(#arrC)"/>
+
+                <!-- answer card -->
+                <g class="ai-card" transform="translate(722,50)">
+                  <rect width="218" height="300" rx="12" fill="var(--bg-elev)" stroke="var(--line)"/>
+                  <circle cx="18" cy="18" r="4" fill="var(--fig-good)" class="fig-pulse-dot"/>
+                  <text class="ai-status" x="30" y="22" font-family="var(--font-mono)" font-size="9.5" fill="var(--fg-muted)">streaming · <tspan class="ai-clock">0.0</tspan> s</text>
+                  <!-- bar chart -->
+                  <g class="ai-chart" transform="translate(16,40)">
+                    <text y="10" font-family="var(--font-sans)" font-size="11" font-weight="600" fill="var(--fg)">Repeaters per writer, Q3</text>
+                    <g fill="var(--line)"><rect class="ai-bar" x="0" y="80" width="26" height="22" rx="3"/><rect class="ai-bar" x="38" y="60" width="26" height="42" rx="3"/><rect class="ai-bar" x="76" y="86" width="26" height="16" rx="3"/><rect class="ai-bar" x="152" y="74" width="26" height="28" rx="3"/></g>
+                    <rect class="ai-bar" x="114" y="30" width="26" height="72" rx="3" fill="var(--accent)"/>
+                    <text class="ai-step" x="127" y="24" text-anchor="middle" font-family="var(--font-mono)" font-size="9" fill="var(--accent-fg)">W-04</text>
+                    <line x1="0" y1="102" x2="186" y2="102" stroke="var(--line)"/>
+                  </g>
+                  <!-- SQL -->
+                  <g class="ai-sql" transform="translate(16,160)" font-family="var(--font-mono)" font-size="8.5" fill="var(--fg-muted)">
+                    <rect x="-4" y="-10" width="194" height="62" rx="6" fill="var(--bg)" stroke="var(--line)"/>
+                    <text class="ai-step" y="2"><tspan fill="var(--accent-fg)">SELECT</tspan> writer, COUNT(DISTINCT lot)</text>
+                    <text class="ai-step" y="14"><tspan fill="var(--accent-fg)">FROM</tspan> repeaters JOIN lots USING(lot)</text>
+                    <text class="ai-step" y="26"><tspan fill="var(--accent-fg)">WHERE</tspan> q = '2025Q3'</text>
+                    <text class="ai-step" y="38"><tspan fill="var(--accent-fg)">GROUP BY</tspan> writer <tspan fill="var(--accent-fg)">ORDER BY</tspan> 2 DESC</text>
+                  </g>
+                  <!-- analysis lines -->
+                  <g transform="translate(16,228)" fill="var(--line)">
+                    <rect class="ai-step" width="186" height="6" rx="3"/><rect class="ai-step" y="14" width="160" height="6" rx="3"/><rect class="ai-step" y="28" width="172" height="6" rx="3"/><rect class="ai-step" y="42" width="110" height="6" rx="3"/>
+                  </g>
+                  <rect class="ai-step" x="16" y="228" width="70" height="6" rx="3" fill="var(--accent)"/>
+                  <text x="16" y="292" font-family="var(--font-mono)" font-size="9" fill="var(--fg-muted)">answer · SQL · chart · follow-ups</text>
+                </g>
+              </svg>
+            </figure>
+
+            <div class="featured-body">
+              <div class="featured-story">
+                <p>I designed and built the service end to end — the agent architecture, the domain knowledge layer that makes a general model fluent in mask-shop vocabulary, and the security envelope that lets a language model work next to production data without ever being trusted with it.</p>
+                <p>At the centre is a LangGraph ReAct agent behind FastAPI. One routing call reads the question and chooses a skill and a tool sequence: natural-language-to-SQL, decomposition of compound questions into sub-queries and synthesis of the results, data analysis with generated Python, plotting, defect-image retrieval, or plain domain Q&amp;A. Results stream back over SSE as they are produced.</p>
+                <p>For open-ended questions there is <strong>Explore mode</strong>: the agent plans, probes the schema, runs SQL and Python, reflects on what it found and iterates — inside a hard token and time budget, keeping a ledger of hypotheses — so it always ends with an answer or an honest "nothing", never a runaway loop. Jobs persist, show their trajectory and can be aborted by their owner.</p>
+                <p>What makes it <em>right</em> rather than merely fluent is the knowledge layer: schema invariants injected into every call, a lexicon with embedding-based semantic resolution that maps fab terms like <em>writer</em> or <em>illumination</em> to the correct table and key, operator-editable skill documents, and golden-answer fixtures that turn "does the model understand this term?" into a test that runs in CI.</p>
+                <p>And what makes it <em>safe</em>: JWT identity from the web middleware, host allow-lists, read-only statement preparation where the statement that was checked is the one executed, every line of generated Python run inside an nsjail/Docker sandbox, signed compiled modules and startup integrity checks. 2,600+ unit and quality tests, prompt-regression suites and a single audited surface for every model call keep it that way as it grows.</p>
+              </div>
+              <ol class="featured-steps">
+                <li><strong>Route</strong><span>One LLM call picks the skill and tool sequence; MCP fallback for anything unusual.</span></li>
+                <li><strong>Act</strong><span>Read-only SQL, sandboxed Python, plots and defect images — each tool a contract, each call budgeted.</span></li>
+                <li><strong>Explore</strong><span>Plan → probe → run → reflect, bounded by budget, with a hypothesis ledger and abortable jobs.</span></li>
+                <li><strong>Ground</strong><span>Schema invariants, a semantic lexicon and golden fixtures keep fab vocabulary pointing at the right data.</span></li>
+                <li><strong>Prove</strong><span>2,600+ tests, prompt regression, harness contracts; every model call through one audited surface.</span></li>
+              </ol>
+            </div>
+
+            <dl class="featured-metrics">
+              <div><dt>Internet egress</dt><dd>0</dd></div>
+              <div><dt>Tool skills</dt><dd>9</dd></div>
+              <div><dt>Unit &amp; quality tests</dt><dd>2,600+</dd></div>
+              <div><dt>Operator-editable skills</dt><dd>14</dd></div>
+            </dl>
+            <p class="featured-foot">Stack: Python · FastAPI · LangGraph · MySQL · FAISS embeddings · PHP/Apache middleware · nsjail / Docker · Nuitka-compiled, signed modules.</p>
+          </article>
+        </div>
+
+        <h4 class="more-heading">Also at KLA</h4>
+        <div class="project-grid project-grid-minor">
+          <div class="project">
+            <h4>RDC / ProLith License Management</h4>
+            <p>Designed a full-stack license management system for Reticle Decision Center and ProLith/ProEtch, cutting manual processing time by 80%.</p>
+            <ul>
+              <li>License generation, application/approval workflow, feature and tool management, release statistics.</li>
+              <li>Encryption, full audit logging, expiration alerts and server control lists.</li>
+            </ul>
+          </div>
+
+          <div class="project">
+            <h4>Device Metrology Mode</h4>
+            <p>Lithography simulation workflow and pattern-search algorithm for reticle registration on the KLA IPRO system.</p>
+            <ul>
+              <li>Cross-domain data streaming between IPRO and RDC servers to automate job submission and result export.</li>
+              <li>Standardized transfer formats for alternate measurable site search.</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="role">
+        <header class="role-head">
+          <div>
+            <h3>Ph.D. Research Assistant</h3>
+            <p class="role-org">University of Minnesota · Minneapolis, MN</p>
+          </div>
+          <p class="role-dates">2013 — 2018</p>
+        </header>
+        <ul class="plain-list">
+          <li>Graphene varactors for wireless gas sensing applications</li>
+          <li>Graphene-edge dielectrophoresis for trapping of biomolecules</li>
+          <li>Glucose monitoring with graphene-based disposable biosensors</li>
+        </ul>
+      </article>
+
+      <div class="education">
+        <h3>Education</h3>
+        <ul class="edu-list">
+          <li>
+            <span class="edu-degree">Ph.D., M.Sc. — Chemistry / Electrical Engineering</span>
+            <span class="edu-school">University of Minnesota</span>
+            <span class="edu-dates">2013 — 2018</span>
+            <span class="edu-note">Thesis: Development and Analysis of Graphene Devices for Bio-medical Sensing Applications</span>
+          </li>
+          <li>
+            <span class="edu-degree">B.Sc. — Chemistry</span>
+            <span class="edu-school">Nanjing University</span>
+            <span class="edu-dates">2009 — 2013</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Publications -->
+    <section id="publications" class="section container" data-side="work">
+      <div class="section-head">
+        <span class="section-num">LOT 03 · PUBLICATIONS</span>
+        <h2>Selected Publications &amp; Patents</h2>
+      </div>
+      <p class="section-lede">9 papers · 3 patents · 250+ citations. Full list on <a href="https://scholar.google.com/citations?user=otNRPYQAAAAJ" target="_blank" rel="noopener">Google Scholar</a>.</p>
+      <ol class="pub-list">
+        <li>
+          <span class="pub-type">Patent</span>
+          <p><strong>System and method for reducing printable defects on extreme ultraviolet pattern masks.</strong> Yao Zhang et al. US Patent US11119404B2, 2020.</p>
+        </li>
+        <li>
+          <span class="pub-type">Journal</span>
+          <p><strong>Capacitive sensing of glucose in electrolytes using graphene quantum capacitance varactors.</strong> Yao Zhang et al. <em>ACS Applied Materials &amp; Interfaces</em>, 2017, 9(44), 38863–38869.</p>
+        </li>
+        <li>
+          <span class="pub-type">Conference</span>
+          <p>SPIE International Conference on Extreme Ultraviolet Lithography, Monterey, CA, 2022.</p>
+        </li>
+        <li>
+          <span class="pub-type">Conference</span>
+          <p>SPIE Photomask Technology, virtual, 2020.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ===================== LIFE SIDE ===================== -->
+    <section class="hero life-hero container" data-side="life">
+      <div class="film-edge film-edge-top" aria-hidden="true"></div>
+      <div class="hero-main">
+        <div class="hero-copy">
+          <p class="eyebrow">Off hours</p>
+          <h1 class="hero-title">The other<br>eight hours</h1>
+          <p class="hero-subtitle">A wall of photos and the notes that go with them. Trails, cities, lab benches, coffee. Nothing here ships to a fab.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#photos">Go to the wall</a>
+            <button type="button" class="btn btn-flip" data-side-target="work">Flip to Work <span aria-hidden="true">⟳</span></button>
+          </div>
+        </div>
+        <div class="life-badge" aria-hidden="true">
+          <svg viewBox="0 0 160 160" width="180" height="180">
+            <circle cx="80" cy="80" r="76" fill="var(--bg-elev)" stroke="var(--accent)" stroke-width="2"/>
+            <circle cx="80" cy="80" r="56" fill="none" stroke="var(--line)" stroke-width="1" stroke-dasharray="3 5"/>
+            <g fill="var(--accent)" opacity="0.9">
+              <circle cx="80" cy="18" r="4"/><circle cx="142" cy="80" r="4"/><circle cx="80" cy="142" r="4"/><circle cx="18" cy="80" r="4"/>
+              <circle cx="124" cy="36" r="4"/><circle cx="124" cy="124" r="4"/><circle cx="36" cy="124" r="4"/><circle cx="36" cy="36" r="4"/>
+            </g>
+            <circle cx="80" cy="80" r="26" fill="var(--accent)"/>
+            <circle cx="80" cy="80" r="12" fill="var(--bg)"/>
+            <circle cx="80" cy="80" r="5" fill="var(--accent)"/>
+          </svg>
+        </div>
+      </div>
+      <div class="film-edge film-edge-bottom" aria-hidden="true"></div>
+    </section>
+
+    <!-- Photo wall -->
+    <section id="photos" class="section container" data-side="life">
+      <div class="section-head">
+        <span class="section-num">THE WALL</span>
+        <h2>Pinned up</h2>
+      </div>
+      <p class="section-lede">Newest on top. Photos with a note carry a slip of paper; click anything to see it large.</p>
+      <div id="wall" class="wall" aria-live="polite">
+        <p class="muted">Loading the wall…</p>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section container contact">
+      <div class="section-head">
+        <span class="section-num">LOT 05 · CONTACT</span>
+        <h2>Contact</h2>
+      </div>
+      <p class="section-lede">Open to conversations about semiconductor software, data platforms and applied AI.</p>
+      <ul class="contact-links">
+        <li><a href="mailto:stanleyrey@gmail.com">stanleyrey@gmail.com</a></li>
+        <li><a href="https://www.linkedin.com/in/yaozhang1990/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://github.com/stanleyrey" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://scholar.google.com/citations?user=otNRPYQAAAAJ" target="_blank" rel="noopener">Google Scholar</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <dialog id="lightbox" class="lightbox">
+    <button class="lightbox-close" id="lightbox-close" type="button" aria-label="Close">×</button>
+    <div class="lightbox-body">
+      <img id="lightbox-img" src="" alt="" />
+      <div class="lightbox-note" id="lightbox-note">
+        <p class="lightbox-date" id="lightbox-date"></p>
+        <h3 id="lightbox-title"></h3>
+        <p id="lightbox-caption" class="lightbox-caption"></p>
+      </div>
+    </div>
+  </dialog>
+
+  <footer class="site-footer container">
+    <p>© <span id="year"></span> Yao Zhang · Built with plain HTML, CSS and JavaScript · Hosted on GitHub Pages</p>
+    <p class="footer-inspect">last inspected: <time id="inspect-date"></time> · 0 defects found · <button type="button" class="link-btn" id="inspect-btn">re-inspect</button></p>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
