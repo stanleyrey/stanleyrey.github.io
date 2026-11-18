@@ -16,6 +16,14 @@
     "note": "My little girl!"
   },
   {
+    "src": "wall/2025_Yosemite_Valley.jpg",
+    "title": "Yosemite Valley",
+    "date": "2025",
+    "w": 5461,
+    "h": 3375,
+    "note": ""
+  },
+  {
     "src": "wall/2025_Yosemite.jpg",
     "title": "Yosemite",
     "date": "2025",
@@ -24,12 +32,44 @@
     "note": "I got a nice wallpaper"
   },
   {
+    "src": "wall/2025_Hawaii_onRidge.jpg",
+    "title": "Hawaii onRidge",
+    "date": "2025",
+    "w": 3907,
+    "h": 5861,
+    "note": ""
+  },
+  {
+    "src": "wall/2025_Hawaii.jpg",
+    "title": "Hawaii",
+    "date": "2025",
+    "w": 5798,
+    "h": 3865,
+    "note": ""
+  },
+  {
     "src": "wall/2024_Hawaii.jpg",
     "title": "Hawaii",
     "date": "2024",
     "w": 4405,
     "h": 2723,
     "note": "Couple over clouds"
+  },
+  {
+    "src": "wall/2024_Beach.jpg",
+    "title": "Beach",
+    "date": "2024",
+    "w": 2064,
+    "h": 1376,
+    "note": ""
+  },
+  {
+    "src": "wall/2023_YellowStone.jpg",
+    "title": "YellowStone",
+    "date": "2023",
+    "w": 4128,
+    "h": 2752,
+    "note": ""
   },
   {
     "src": "wall/2021_Night.jpg",
@@ -46,6 +86,30 @@
     "w": 4128,
     "h": 2752,
     "note": "You can see the lol from our back!"
+  },
+  {
+    "src": "wall/2021_DeathValley.jpg",
+    "title": "DeathValley",
+    "date": "2021",
+    "w": 2477,
+    "h": 1651,
+    "note": ""
+  },
+  {
+    "src": "wall/2017_Minnesota.jpg",
+    "title": "Minnesota",
+    "date": "2017",
+    "w": 4189,
+    "h": 2775,
+    "note": ""
+  },
+  {
+    "src": "wall/2017_Banff.jpg",
+    "title": "Banff",
+    "date": "2017",
+    "w": 4928,
+    "h": 3264,
+    "note": ""
   },
   {
     "src": "wall/2016_yellowstone.jpg",
@@ -70,69 +134,5 @@
     "w": 4290,
     "h": 2361,
     "note": "I enjoy taking pic with myself"
-  },
-  {
-    "src": "wall/DSC_7355.jpg",
-    "title": "DSC 7355",
-    "date": "",
-    "w": 4928,
-    "h": 3264,
-    "note": ""
-  },
-  {
-    "src": "wall/DSC_5515.jpg",
-    "title": "DSC 5515",
-    "date": "",
-    "w": 4189,
-    "h": 2775,
-    "note": ""
-  },
-  {
-    "src": "wall/DSC_4993_mark.jpg",
-    "title": "DSC 4993 mark",
-    "date": "",
-    "w": 2064,
-    "h": 1376,
-    "note": ""
-  },
-  {
-    "src": "wall/DSC_49732.jpg",
-    "title": "DSC 49732",
-    "date": "",
-    "w": 3907,
-    "h": 5861,
-    "note": ""
-  },
-  {
-    "src": "wall/DSC_4912.jpg",
-    "title": "DSC 4912",
-    "date": "",
-    "w": 5798,
-    "h": 3865,
-    "note": ""
-  },
-  {
-    "src": "wall/DSC_4881.jpg",
-    "title": "DSC 4881",
-    "date": "",
-    "w": 4128,
-    "h": 2752,
-    "note": ""
-  },
-  {
-    "src": "wall/DSC_2184.jpg",
-    "title": "DSC 2184",
-    "date": "",
-    "w": 2477,
-    "h": 1651,
-    "note": ""
-  },
-  {
-    "src": "wall/DSC_2017.jpg",
-    "title": "DSC 2017",
-    "date": "",
-    "w": 5461,
-    "h": 3375,
-    "note": ""
   }
 ]
