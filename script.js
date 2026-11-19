@@ -31,9 +31,27 @@
 
   /* ---------- Embedded (iframe / ?embed=1) ---------- */
   const root = document.documentElement;
-  const embedded = window.self !== window.top || new URLSearchParams(location.search).has("embed");
+  const params = new URLSearchParams(location.search);
+  const embedded = window.self !== window.top || params.has("embed");
+  const compact = params.get("embed") === "compact";
   if (embedded) {
     root.classList.add("embedded");
+    if (compact) {
+      root.classList.add("compact");
+      // Compact card for fixed-height frames: hero + highlights + a link to the full site.
+      const side = location.hash === "#life" ? "life" : "work";
+      const hero = document.querySelector(`.hero[data-side="${side}"]`);
+      const cta = el("a", { class: "btn btn-primary", href: `https://stanleyrey.github.io/${side === "life" ? "#life" : ""}`, target: "_top", text: side === "life" ? "Open the photo wall" : "Open the full site" });
+      hero?.querySelector(".hero-actions")?.replaceChildren(cta);
+      if (side === "work") {
+        const strip = el("ul", { class: "compact-strip" }, [...document.querySelectorAll(".featured")].map((f) =>
+          el("li", {}, [
+            el("a", { href: `https://stanleyrey.github.io/#${f.id}`, target: "_top", text: f.querySelector("h4").textContent }),
+            el("span", { text: f.querySelector(".featured-kicker").textContent }),
+          ])));
+        hero?.appendChild(strip);
+      }
+    }
     // Open outbound links in the top window instead of inside the frame
     $$('a[href^="http"], a[href^="mailto:"]').forEach((a) => { if (!a.target) a.target = "_top"; });
   }
@@ -88,6 +106,16 @@
   sideBtns.forEach((b) => b.addEventListener("click", () => setSide(b.dataset.sideTarget)));
   window.addEventListener("hashchange", () => { const side = sideForHash(location.hash); if (side && side !== root.dataset.side) setSide(side, { animate: true, hash: location.hash }); });
 
+  if (embedded && params.has("measure")) {
+    // Shows the frame height this page needs at the current width: open the embed URL with
+    // &measure=1 in a browser window resized to the Google Sites column width and read the number.
+    const badge = el("div", { class: "measure-badge" });
+    document.body.appendChild(badge);
+    const report = () => { badge.textContent = `frame height needed @ ${window.innerWidth}px wide: ${document.documentElement.scrollHeight} px`; };
+    new ResizeObserver(report).observe(document.body);
+    window.addEventListener("resize", report);
+    setTimeout(report, 1500);
+  }
   if (embedded) {
     document.addEventListener("click", (e) => {
       const a = e.target.closest('a[href^="#"]'); if (!a) return;

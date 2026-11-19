@@ -52,7 +52,15 @@ Local preview: `pip install pillow` once, run `python wall/build_manifest.py` af
 
 ## Embedding in Google Sites (or any iframe)
 
-Embed `https://stanleyrey.github.io/?embed=1` (Work) or `https://stanleyrey.github.io/?embed=1#life` (Life). When the page detects it is framed (or `?embed=1`), it drops the sticky header and scan bar, keeps in-page links inside the frame, opens outbound links in the top window, and tolerates blocked `localStorage`. The frame cannot auto-size; give it a fixed height (≈ 2400 px for Work, ≈ 2000 px for Life on desktop).
+Three embed URLs. The page detects it is framed (or `?embed=…`), drops the sticky header and scan bar, keeps in-page links inside the frame, opens outbound links in the top window, and tolerates blocked `localStorage`.
+
+| URL | What it shows | Frame height (desktop) |
+|---|---|---|
+| `https://stanleyrey.github.io/?embed=compact` | Hero card + three project highlights + "Open the full site" | ~700 px |
+| `https://stanleyrey.github.io/?embed=compact#life` | Life hero + "Open the photo wall" | ~620 px |
+| `https://stanleyrey.github.io/?embed=1` / `…?embed=1#life` | The whole side | ~9,100 px / ~5,300 px — only if you accept a very tall frame |
+
+Google Sites cannot auto-size an iframe, so the frame height is fixed by hand. Append `&measure=1` to any embed URL and open it in a browser window as wide as the Google Sites column to read the exact height the page needs at that width.
 
 ## Preview locally
 

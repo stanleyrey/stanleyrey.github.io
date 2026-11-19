@@ -627,6 +627,22 @@ html.embedded { scroll-padding-top: 0; }
 html.embedded .hero { padding-top: 3rem; }
 html.embedded .site-footer { padding-bottom: 1.5rem; }
 html.embedded .lightbox-close { position: absolute; }
+html.embedded, html.embedded body { overflow-x: hidden; }
+/* compact card: only the hero of the active side */
+html.compact .site-header, html.compact .section, html.compact .site-footer { display: none !important; }
+html.compact .hero { padding: 2.5rem 0 2rem; }
+html.compact .hero-main { margin-bottom: 2rem; }
+.compact-strip { list-style: none; padding: 0; margin: 1.5rem 0 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; }
+.compact-strip li { background: var(--bg-elev); border: 1px solid var(--line); border-radius: var(--radius); padding: 0.9rem 1rem; display: grid; gap: 0.25rem; }
+.compact-strip a { font-weight: 600; color: var(--fg); font-size: 0.95rem; }
+.compact-strip a:hover { color: var(--accent); text-decoration: none; }
+.compact-strip span { font-family: var(--font-mono); font-size: 0.68rem; color: var(--fg-muted); text-transform: uppercase; letter-spacing: 0.06em; }
+@media (max-width: 820px) { .compact-strip { grid-template-columns: 1fr; } }
+.measure-badge {
+  position: fixed; left: 50%; bottom: 10px; transform: translateX(-50%); z-index: 90;
+  font-family: var(--font-mono); font-size: 12px; padding: 6px 12px; border-radius: 999px;
+  background: #111; color: #fff; box-shadow: 0 4px 16px rgb(0 0 0 / 0.4); white-space: nowrap;
+}
 
 /* Print: a clean one-page résumé */
 @media print {
