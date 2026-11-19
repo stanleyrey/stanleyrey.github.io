@@ -1,7 +1,7 @@
 (function () {
   "use strict";
 
-  const ROOT = document.querySelector('script[src*="script.js"]').getAttribute("src").replace(/script\.js$/, "");
+  const ROOT = document.querySelector('script[src*="script.js"]').getAttribute("src").replace(/script\.js(\?.*)?$/, "");
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const $ = (sel, root) => (root || document).querySelector(sel);
   const $$ = (sel, root) => [...(root || document).querySelectorAll(sel)];
