@@ -641,8 +641,9 @@ html.compact .hero-main { margin-bottom: 2rem; }
 .measure-badge {
   position: fixed; left: 50%; bottom: 10px; transform: translateX(-50%); z-index: 90;
   font-family: var(--font-mono); font-size: 12px; padding: 6px 12px; border-radius: 999px;
-  background: #111; color: #fff; box-shadow: 0 4px 16px rgb(0 0 0 / 0.4); white-space: nowrap;
+  background: #b91c1c; color: #fff; box-shadow: 0 4px 16px rgb(0 0 0 / 0.4); white-space: nowrap;
 }
+.measure-badge.ok { background: #15803d; }
 
 /* Print: a clean one-page résumé */
 @media print {

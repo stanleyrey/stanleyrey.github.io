@@ -111,7 +111,11 @@
     // &measure=1 in a browser window resized to the Google Sites column width and read the number.
     const badge = el("div", { class: "measure-badge" });
     document.body.appendChild(badge);
-    const report = () => { badge.textContent = `frame height needed @ ${window.innerWidth}px wide: ${document.documentElement.scrollHeight} px`; };
+    const report = () => {
+      const need = document.documentElement.scrollHeight, have = window.innerHeight, ok = have >= need;
+      badge.textContent = `frame ${window.innerWidth} × ${have} px · content needs ${need} px · ${ok ? "fits ✓" : `add ${need - have} px`}`;
+      badge.classList.toggle("ok", ok);
+    };
     new ResizeObserver(report).observe(document.body);
     window.addEventListener("resize", report);
     setTimeout(report, 1500);
