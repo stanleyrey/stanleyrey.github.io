@@ -280,22 +280,38 @@
     const hash = (str) => { let h = 2166136261; for (const ch of str) { h ^= ch.charCodeAt(0); h = Math.imul(h, 16777619); } return (h >>> 0) / 4294967295; };
     const fmtDate = (d) => { if (!d) return ""; const [y, m, day] = d.split("-"); const dt = new Date(Number(y), (Number(m) || 1) - 1, Number(day) || 1); return dt.toLocaleDateString(undefined, day ? { year: "numeric", month: "short", day: "numeric" } : m ? { year: "numeric", month: "short" } : { year: "numeric" }); };
 
-    // Size on the wall: columns from aspect ratio, rows from aspect ratio + note length.
-    const shape = (p) => {
-      const ar = p.w / p.h, note = p.note.length;
-      let cols, rows;
-      if (ar > 2.1) { cols = 12; rows = 4; }           // panorama
-      else if (ar > 1.25) { cols = 8; rows = 5; }      // landscape
-      else if (ar > 0.85) { cols = 4; rows = 4; }      // square
-      else { cols = 4; rows = 6; }                     // portrait
-      if (note > 140) rows += 2;                       // long note gets room beneath
-      else if (note > 40) rows += 1;
-      const kind = ar > 2.1 ? "pano" : ar > 1.25 ? "land" : ar > 0.85 ? "sq" : "port";
-      return { cols, rows, kind };
+    // Width on the wall: a deterministic pick from a few sizes per orientation, so runs of
+    // similar photos still interleave. Height follows the real aspect ratio (computed in fitRows).
+    const kindOf = (ar) => (ar > 2.1 ? "pano" : ar > 1.25 ? "land" : ar > 0.85 ? "sq" : "port");
+    const WIDTHS = { pano: [6, 8, 12, 6], land: [4, 6, 8, 4, 6], sq: [3, 4, 6, 4], port: [3, 4, 4, 3] };
+    const pickCols = (p, i) => {
+      const ar = p.w / p.h, kind = kindOf(ar), opts = WIDTHS[kind];
+      if (i === 0) return Math.max(...opts.filter((c) => c <= 8));          // lead with a big one
+      return opts[Math.floor(hash(p.src + "w") * opts.length)];
     };
+    const noteBand = (len) => (len === 0 ? 0 : len <= 40 ? 0 : len <= 140 ? 64 : 84); // px reserved under the photo
+
+    // Rows are derived from the live column width so the frame keeps the photo's exact ratio.
+    const fitRows = () => {
+      const cs = getComputedStyle(wall);
+      const nCols = cs.gridTemplateColumns.split(" ").length;
+      const unit = parseFloat(cs.gridAutoRows), gapY = parseFloat(cs.rowGap) || 0, gapX = parseFloat(cs.columnGap) || 0;
+      const inner = wall.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
+      const colW = (inner - gapX * (nCols - 1)) / nCols;
+      $$(".pin", wall).forEach((fig) => {
+        const cols = Math.min(nCols, Number(fig.dataset.cols));
+        const width = cols * colW + (cols - 1) * gapX - 2 * 10.4;          // minus .pin horizontal padding
+        const photoH = width / Number(fig.dataset.ar);
+        const total = photoH + 10.4 + 12 + 7 + 22 + Number(fig.dataset.noteBand); // paddings + gap + caption
+        fig.style.setProperty("--cols", cols);
+        fig.style.setProperty("--rows", Math.max(2, Math.ceil((total + gapY) / (unit + gapY))));
+      });
+    };
+    let fitTimer = 0;
+    window.addEventListener("resize", () => { clearTimeout(fitTimer); fitTimer = setTimeout(fitRows, 120); });
 
     const openLightbox = (p) => {
-      lbImg.src = ROOT + p.src; lbImg.alt = p.title;
+      lbImg.src = ROOT + (p.large || p.src); lbImg.alt = p.title;
       lbTitle.textContent = p.title; lbDate.textContent = fmtDate(p.date);
       lbCaption.textContent = p.note; lbNote.classList.toggle("is-empty", !p.note);
       lightbox.showModal();
@@ -304,7 +320,7 @@
     lightbox.addEventListener("click", (e) => { if (e.target === lightbox) lightbox.close(); });
 
     const renderPin = (p, i) => {
-      const { cols, rows, kind } = shape(p);
+      const ar = p.w / p.h, kind = kindOf(ar), cols = pickCols(p, i);
       const r = hash(p.src);
       const tilt = ((r - 0.5) * 3.2).toFixed(2);                     // -1.6° .. 1.6°
       const noteTilt = (((hash(p.src + "n") - 0.5) * 6)).toFixed(2); // -3° .. 3°
@@ -313,10 +329,11 @@
       const noteClass = noteLen === 0 ? "" : noteLen <= 40 ? " note-short" : noteLen <= 140 ? " note-mid" : " note-long";
       const fig = el("figure", {
         class: `pin pin-${kind}${noteClass}`,
-        style: { "--cols": cols, "--rows": rows, "--tilt": `${tilt}deg`, "--note-tilt": `${noteTilt}deg`, "--pin-x": `${pinX}%`, "--delay": `${Math.min(i, 12) * 60}ms` },
+        "data-cols": cols, "data-ar": ar.toFixed(4), "data-note-band": noteBand(noteLen),
+        style: { "--cols": cols, "--rows": 4, "--ar": ar.toFixed(4), "--tilt": `${tilt}deg`, "--note-tilt": `${noteTilt}deg`, "--pin-x": `${pinX}%`, "--delay": `${Math.min(i, 12) * 60}ms` },
       }, [
         el("button", { type: "button", class: "pin-photo", "aria-label": `Open ${p.title}` }, [
-          el("img", { src: ROOT + p.src, alt: p.title, loading: i < 4 ? "eager" : "lazy", width: p.w, height: p.h }),
+          el("img", { src: ROOT + (p.thumb || p.src), alt: p.title, loading: i < 6 ? "eager" : "lazy", decoding: "async", width: p.w, height: p.h }),
         ]),
         el("figcaption", { class: "pin-meta" }, [
           el("span", { class: "pin-title", text: p.title }),
@@ -332,6 +349,7 @@
       .then((photos) => {
         if (!photos.length) return wall.replaceChildren(el("p", { class: "muted", text: "The wall is empty. Drop photos into wall/ and push." }));
         wall.replaceChildren(...photos.map(renderPin));
+        fitRows();
         wall.classList.add("is-ready");
       })
       .catch(() => wall.replaceChildren(el("p", { class: "muted", text: "Could not load the wall right now." })));

@@ -7,7 +7,12 @@ runs this script and commits the manifest; run it by hand for a local preview:
 
     python wall/build_manifest.py
 
-No third-party packages: image dimensions are read from the file headers.
+Image dimensions are read from the file headers (no dependencies). If Pillow is
+installed, two downsized, high-quality JPEG derivatives are also written per photo:
+  _thumbs/<name>.jpg   long side 1200 px  - shown on the wall
+  _large/<name>.jpg    long side 2400 px  - shown in the lightbox
+Originals of any size can therefore be committed as-is. Derivatives are regenerated on every run
+(deterministic output, so unchanged photos produce no git diff).
 """
 from __future__ import annotations
 
@@ -18,6 +23,8 @@ import sys
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
+THUMB_DIR, LARGE_DIR = HERE / "_thumbs", HERE / "_large"
+THUMB_PX, LARGE_PX = 1200, 2400
 IMAGE_EXT = {".jpg", ".jpeg", ".png", ".webp", ".gif", ".avif"}
 DATE_RE = re.compile(r"^(\d{4})(?:[-_.](\d{2}))?(?:[-_.](\d{2}))?[-_ ]*(.*)$")
 
@@ -94,6 +101,24 @@ def parse_name(stem: str):
     return date, (title[:1].upper() + title[1:]) if title else ""
 
 
+def derive(path: Path, out_dir: Path, long_side: int):
+    """Write a Lanczos-downscaled, lightly sharpened, 4:4:4 progressive JPEG. Returns (relpath, w, h) or None."""
+    try:
+        from PIL import Image, ImageFilter, ImageOps
+    except ImportError:
+        return None
+    out = out_dir / (path.stem + ".jpg")
+    out_dir.mkdir(exist_ok=True)
+    with Image.open(path) as im:
+        im = ImageOps.exif_transpose(im).convert("RGB")
+        scale = long_side / max(im.size)
+        if scale < 1:
+            im = im.resize((round(im.width * scale), round(im.height * scale)), Image.LANCZOS, reducing_gap=3.0)
+            im = im.filter(ImageFilter.UnsharpMask(radius=0.8, percent=60, threshold=3))
+        im.save(out, "JPEG", quality=88, subsampling=0, optimize=True, progressive=True)
+        return f"wall/{out_dir.name}/{out.name}", im.width, im.height
+
+
 def main() -> int:
     items = []
     for path in sorted(HERE.iterdir()):
@@ -106,7 +131,14 @@ def main() -> int:
         note_path = path.with_suffix(".txt")
         note = note_path.read_text(encoding="utf-8").strip() if note_path.exists() else ""
         date, title = parse_name(path.stem)
-        items.append({"src": f"wall/{path.name}", "title": title, "date": date, "w": size[0], "h": size[1], "note": note})
+        item = {"src": f"wall/{path.name}", "title": title, "date": date, "w": size[0], "h": size[1], "note": note}
+        thumb = derive(path, THUMB_DIR, THUMB_PX)
+        large = derive(path, LARGE_DIR, LARGE_PX)
+        if thumb:
+            item["thumb"], item["w"], item["h"] = thumb[0], thumb[1], thumb[2]  # EXIF-corrected orientation
+        if large:
+            item["large"] = large[0]
+        items.append(item)
     items.sort(key=lambda it: (it["date"], it["src"]), reverse=True)
     out = HERE / "manifest.json"
     out.write_text(json.dumps(items, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")

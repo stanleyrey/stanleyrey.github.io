@@ -565,7 +565,7 @@ main.flip-in { animation: flip-in 0.42s cubic-bezier(0, 0, 0.2, 1) both; }
   border: 1px solid var(--line); box-shadow: inset 0 0 60px rgb(0 0 0 / 0.04);
 }
 .pin {
-  grid-column: span var(--cols, 2); grid-row: span var(--rows, 2); margin: 0; position: relative;
+  grid-column: span var(--cols, 2); grid-row: span var(--rows, 2); margin: 0; position: relative; align-self: start;
   display: flex; flex-direction: column; gap: 0.45rem;
   background: var(--bg-elev); padding: 0.65rem 0.65rem 0.75rem; border-radius: 3px;
   box-shadow: 0 1px 2px rgb(0 0 0 / 0.08), 0 14px 28px -16px rgb(0 0 0 / 0.45);
@@ -580,7 +580,7 @@ main.flip-in { animation: flip-in 0.42s cubic-bezier(0, 0, 0.2, 1) both; }
   background: radial-gradient(circle at 35% 35%, #fff 0, var(--accent) 35%, var(--accent-fg) 100%);
   box-shadow: 0 2px 3px rgb(0 0 0 / 0.35);
 }
-.pin-photo { flex: 1; min-height: 0; padding: 0; border: none; background: var(--line); border-radius: 2px; overflow: hidden; cursor: zoom-in; display: block; }
+.pin-photo { aspect-ratio: var(--ar, 3 / 2); width: 100%; padding: 0; border: none; background: var(--line); border-radius: 2px; overflow: hidden; cursor: zoom-in; display: block; }
 .pin-photo img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s ease; }
 .pin:hover .pin-photo img { transform: scale(1.04); }
 .pin-meta { display: flex; justify-content: space-between; align-items: baseline; gap: 0.75rem; font-size: 0.82rem; }
@@ -595,8 +595,8 @@ main.flip-in { animation: flip-in 0.42s cubic-bezier(0, 0, 0.2, 1) both; }
   display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden;
 }
 .note-short .pin-note { position: absolute; right: -6px; bottom: 2.6rem; max-width: 60%; font-family: var(--font-serif); font-style: italic; -webkit-line-clamp: 2; }
-.note-mid .pin-note { -webkit-line-clamp: 3; }
-.note-long .pin-note { -webkit-line-clamp: 4; }
+.note-mid .pin-note { -webkit-line-clamp: 2; }
+.note-long .pin-note { -webkit-line-clamp: 3; }
 .pin-pano .pin-meta, .pin-land .pin-meta { font-size: 0.85rem; }
 /* ambient */
 .wall.is-ready { animation: none; }

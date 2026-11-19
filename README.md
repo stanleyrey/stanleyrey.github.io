@@ -22,24 +22,25 @@ The page has a **Work** side (résumé) and a **Life** side (the photo wall). Th
 
 ## The wall: adding a photo
 
-1. Drop the image into `wall/`. Name it `YYYY-MM-DD_short-title.jpg` (the date sorts it, the title becomes the caption; `-`/`_` become spaces). `.jpg .jpeg .png .webp .gif .avif` are accepted. Keep files under ~1 MB; 1600–2000 px on the long side is plenty.
+1. Drop the image into `wall/`. Name it `YYYY-MM-DD_short-title.jpg` (the date sorts it, the title becomes the caption; `-`/`_` become spaces). `.jpg .jpeg .png .webp .gif .avif` are accepted. Any size is fine: the build step writes high-quality downsized copies to `wall/_thumbs/` (1200 px, shown on the wall) and `wall/_large/` (2400 px, shown in the lightbox); the original is never served.
 2. Optionally add a note with the **same name** and `.txt`: `wall/YYYY-MM-DD_short-title.txt`. Plain text, any length.
-3. Commit and push. The GitHub Action (`.github/workflows/wall.yml`) rebuilds `wall/manifest.json` and commits it; Pages redeploys a minute later.
+3. Commit and push. The GitHub Action (`.github/workflows/wall.yml`) rebuilds `wall/manifest.json`, regenerates `_thumbs/` and `_large/` (Pillow, Lanczos + light unsharp mask, JPEG q88 4:4:4) and commits them; Pages redeploys a minute or two later.
 
 How the wall lays things out (all automatic, from the image size and the note):
 
 | Photo | Footprint |
 |---|---|
-| panorama (w/h > 2.1) | full width |
-| landscape | 2/3 width |
-| square | 1/3 width |
-| portrait | 1/3 width, taller |
+| panorama (w/h > 2.1) | 6, 8 or 12 of 12 columns |
+| landscape | 4, 6 or 8 columns |
+| square | 3, 4 or 6 columns |
+| portrait | 3 or 4 columns |
+| any | height follows the photo's real aspect ratio; the first photo is always a big one |
 | short note (≤ 40 chars) | a small italic slip overlapping the photo corner |
 | medium / long note | a paper slip under the photo; the pin grows one or two rows |
 
-Every pin gets a deterministic small tilt and pin position from its filename, so the wall looks hand-arranged but never moves between visits. Newest first.
+The width, tilt and pin position are all derived from the filename hash, so the wall looks hand-arranged but never moves between visits, and runs of same-shaped photos still interleave instead of stacking one per row. Newest first.
 
-Local preview: run `python wall/build_manifest.py` after adding files, then serve the folder (below). The eight `sample placeholder` photos in `wall/` are generated stand-ins — delete them (and their `.txt`) once real photos are in.
+Local preview: `pip install pillow` once, run `python wall/build_manifest.py` after adding files, then serve the folder (below).
 
 ## Interactive bits (no configuration needed)
 

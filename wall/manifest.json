@@ -3,136 +3,170 @@
     "src": "wall/2026_loved_ones.jpg",
     "title": "Loved ones",
     "date": "2026",
-    "w": 5993,
-    "h": 3995,
-    "note": "Wife and daughter"
+    "w": 1200,
+    "h": 800,
+    "note": "Wife and daughter",
+    "thumb": "wall/_thumbs/2026_loved_ones.jpg",
+    "large": "wall/_large/2026_loved_ones.jpg"
   },
   {
     "src": "wall/2026_Me_and_girl.jpg",
     "title": "Me and girl",
     "date": "2026",
-    "w": 4024,
-    "h": 6036,
-    "note": "My little girl!"
+    "w": 800,
+    "h": 1200,
+    "note": "My little girl!",
+    "thumb": "wall/_thumbs/2026_Me_and_girl.jpg",
+    "large": "wall/_large/2026_Me_and_girl.jpg"
   },
   {
     "src": "wall/2025_Yosemite_Valley.jpg",
     "title": "Yosemite Valley",
     "date": "2025",
-    "w": 5461,
-    "h": 3375,
-    "note": ""
+    "w": 1200,
+    "h": 742,
+    "note": "",
+    "thumb": "wall/_thumbs/2025_Yosemite_Valley.jpg",
+    "large": "wall/_large/2025_Yosemite_Valley.jpg"
   },
   {
     "src": "wall/2025_Yosemite.jpg",
     "title": "Yosemite",
     "date": "2025",
-    "w": 2556,
-    "h": 4136,
-    "note": "I got a nice wallpaper"
+    "w": 742,
+    "h": 1200,
+    "note": "I got a nice wallpaper",
+    "thumb": "wall/_thumbs/2025_Yosemite.jpg",
+    "large": "wall/_large/2025_Yosemite.jpg"
   },
   {
     "src": "wall/2025_Hawaii_onRidge.jpg",
     "title": "Hawaii onRidge",
     "date": "2025",
-    "w": 3907,
-    "h": 5861,
-    "note": ""
+    "w": 800,
+    "h": 1200,
+    "note": "",
+    "thumb": "wall/_thumbs/2025_Hawaii_onRidge.jpg",
+    "large": "wall/_large/2025_Hawaii_onRidge.jpg"
   },
   {
     "src": "wall/2025_Hawaii.jpg",
     "title": "Hawaii",
     "date": "2025",
-    "w": 5798,
-    "h": 3865,
-    "note": ""
+    "w": 1200,
+    "h": 800,
+    "note": "",
+    "thumb": "wall/_thumbs/2025_Hawaii.jpg",
+    "large": "wall/_large/2025_Hawaii.jpg"
   },
   {
     "src": "wall/2024_Hawaii.jpg",
     "title": "Hawaii",
     "date": "2024",
-    "w": 4405,
-    "h": 2723,
-    "note": "Couple over clouds"
+    "w": 1200,
+    "h": 742,
+    "note": "Couple over clouds",
+    "thumb": "wall/_thumbs/2024_Hawaii.jpg",
+    "large": "wall/_large/2024_Hawaii.jpg"
   },
   {
     "src": "wall/2024_Beach.jpg",
     "title": "Beach",
     "date": "2024",
-    "w": 2064,
-    "h": 1376,
-    "note": ""
+    "w": 1200,
+    "h": 800,
+    "note": "",
+    "thumb": "wall/_thumbs/2024_Beach.jpg",
+    "large": "wall/_large/2024_Beach.jpg"
   },
   {
     "src": "wall/2023_YellowStone.jpg",
     "title": "YellowStone",
     "date": "2023",
-    "w": 4128,
-    "h": 2752,
-    "note": ""
+    "w": 1200,
+    "h": 800,
+    "note": "",
+    "thumb": "wall/_thumbs/2023_YellowStone.jpg",
+    "large": "wall/_large/2023_YellowStone.jpg"
   },
   {
     "src": "wall/2021_Night.jpg",
     "title": "Night",
     "date": "2021",
-    "w": 2477,
-    "h": 1651,
-    "note": ""
+    "w": 1200,
+    "h": 800,
+    "note": "",
+    "thumb": "wall/_thumbs/2021_Night.jpg",
+    "large": "wall/_large/2021_Night.jpg"
   },
   {
     "src": "wall/2021_Laugh.jpg",
     "title": "Laugh",
     "date": "2021",
-    "w": 4128,
-    "h": 2752,
-    "note": "You can see the lol from our back!"
+    "w": 1200,
+    "h": 800,
+    "note": "You can see the lol from our back!",
+    "thumb": "wall/_thumbs/2021_Laugh.jpg",
+    "large": "wall/_large/2021_Laugh.jpg"
   },
   {
     "src": "wall/2021_DeathValley.jpg",
     "title": "DeathValley",
     "date": "2021",
-    "w": 2477,
-    "h": 1651,
-    "note": ""
+    "w": 1200,
+    "h": 800,
+    "note": "",
+    "thumb": "wall/_thumbs/2021_DeathValley.jpg",
+    "large": "wall/_large/2021_DeathValley.jpg"
   },
   {
     "src": "wall/2017_Minnesota.jpg",
     "title": "Minnesota",
     "date": "2017",
-    "w": 4189,
-    "h": 2775,
-    "note": ""
+    "w": 1200,
+    "h": 795,
+    "note": "",
+    "thumb": "wall/_thumbs/2017_Minnesota.jpg",
+    "large": "wall/_large/2017_Minnesota.jpg"
   },
   {
     "src": "wall/2017_Banff.jpg",
     "title": "Banff",
     "date": "2017",
-    "w": 4928,
-    "h": 3264,
-    "note": ""
+    "w": 1200,
+    "h": 795,
+    "note": "",
+    "thumb": "wall/_thumbs/2017_Banff.jpg",
+    "large": "wall/_large/2017_Banff.jpg"
   },
   {
     "src": "wall/2016_yellowstone.jpg",
     "title": "Yellowstone",
     "date": "2016",
-    "w": 4408,
-    "h": 2875,
-    "note": "The lonely trip in 2016"
+    "w": 1200,
+    "h": 783,
+    "note": "The lonely trip in 2016",
+    "thumb": "wall/_thumbs/2016_yellowstone.jpg",
+    "large": "wall/_large/2016_yellowstone.jpg"
   },
   {
     "src": "wall/2016_Me.jpg",
     "title": "Me",
     "date": "2016",
-    "w": 4928,
-    "h": 3264,
-    "note": ""
+    "w": 1200,
+    "h": 795,
+    "note": "",
+    "thumb": "wall/_thumbs/2016_Me.jpg",
+    "large": "wall/_large/2016_Me.jpg"
   },
   {
     "src": "wall/Me_and_Me.jpg",
     "title": "Me and Me",
     "date": "",
-    "w": 4290,
-    "h": 2361,
-    "note": "I enjoy taking pic with myself"
+    "w": 1200,
+    "h": 660,
+    "note": "I enjoy taking pic with myself",
+    "thumb": "wall/_thumbs/Me_and_Me.jpg",
+    "large": "wall/_large/Me_and_Me.jpg"
   }
 ]

@@ -6,6 +6,8 @@ on:
     paths:
       - "wall/**"
       - "!wall/manifest.json"
+      - "!wall/_thumbs/**"
+      - "!wall/_large/**"
   workflow_dispatch:
 
 permissions:
@@ -19,14 +21,15 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - run: pip install pillow
       - run: python wall/build_manifest.py
-      - name: Commit manifest if it changed
+      - name: Commit manifest and derivatives if anything changed
         run: |
-          if git diff --quiet -- wall/manifest.json; then
-            echo "manifest unchanged"; exit 0
+          git add wall/manifest.json wall/_thumbs wall/_large
+          if git diff --cached --quiet; then
+            echo "nothing changed"; exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add wall/manifest.json
-          git commit -m "chore(wall): rebuild manifest"
+          git commit -m "chore(wall): rebuild manifest and thumbnails"
           git push
