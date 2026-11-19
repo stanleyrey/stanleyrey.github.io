@@ -50,6 +50,10 @@ Local preview: `pip install pillow` once, run `python wall/build_manifest.py` af
 - Life side: pins drop in on load; hover straightens a pin; click opens it large with its note.
 - All motion is disabled under `prefers-reduced-motion`. Print (`Ctrl+P`) yields a clean text résumé (Work side only).
 
+## Embedding in Google Sites (or any iframe)
+
+Embed `https://stanleyrey.github.io/?embed=1` (Work) or `https://stanleyrey.github.io/?embed=1#life` (Life). When the page detects it is framed (or `?embed=1`), it drops the sticky header and scan bar, keeps in-page links inside the frame, opens outbound links in the top window, and tolerates blocked `localStorage`. The frame cannot auto-size; give it a fixed height (≈ 2400 px for Work, ≈ 2000 px for Life on desktop).
+
 ## Preview locally
 
 ```

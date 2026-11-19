@@ -620,6 +620,14 @@ main.flip-in { animation: flip-in 0.42s cubic-bezier(0, 0, 0.2, 1) both; }
 }
 .lightbox-close:hover { background: rgb(255 255 255 / 0.3); }
 
+/* Embedded in an iframe (Google Sites etc.) */
+html.embedded .scan-progress { display: none; }
+html.embedded .site-header { position: static; backdrop-filter: none; background: var(--bg); }
+html.embedded { scroll-padding-top: 0; }
+html.embedded .hero { padding-top: 3rem; }
+html.embedded .site-footer { padding-bottom: 1.5rem; }
+html.embedded .lightbox-close { position: absolute; }
+
 /* Print: a clean one-page résumé */
 @media print {
   .site-header, .scan-progress, .hero-canvas, .theme-toggle, .hero-actions, .fig-action, .featured-hero, [data-side="life"], .now-grid, .footer-inspect, .lightbox, .timeline, .side-switch { display: none !important; }

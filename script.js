@@ -29,9 +29,22 @@
   };
   const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
-  /* ---------- Theme ---------- */
+  /* ---------- Embedded (iframe / ?embed=1) ---------- */
   const root = document.documentElement;
-  const stored = localStorage.getItem("theme");
+  const embedded = window.self !== window.top || new URLSearchParams(location.search).has("embed");
+  if (embedded) {
+    root.classList.add("embedded");
+    // Open outbound links in the top window instead of inside the frame
+    $$('a[href^="http"], a[href^="mailto:"]').forEach((a) => { if (!a.target) a.target = "_top"; });
+  }
+
+  /* ---------- Theme ---------- */
+  // localStorage can throw inside sandboxed / third-party iframes
+  const store = {
+    get: (k) => { try { return localStorage.getItem(k); } catch { return null; } },
+    set: (k, v) => { try { localStorage.setItem(k, v); } catch { /* ignore */ } },
+  };
+  const stored = store.get("theme");
   const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
   root.dataset.theme = stored || (prefersDark ? "dark" : "light");
   const toggle = $("#theme-toggle");
@@ -40,7 +53,7 @@
       root.classList.add("theme-transition");
       const next = root.dataset.theme === "dark" ? "light" : "dark";
       root.dataset.theme = next;
-      localStorage.setItem("theme", next);
+      store.set("theme", next);
       setTimeout(() => root.classList.remove("theme-transition"), 500);
     });
   }
@@ -74,6 +87,14 @@
   applySide(sideForHash(location.hash) || "work");
   sideBtns.forEach((b) => b.addEventListener("click", () => setSide(b.dataset.sideTarget)));
   window.addEventListener("hashchange", () => { const side = sideForHash(location.hash); if (side && side !== root.dataset.side) setSide(side, { animate: true, hash: location.hash }); });
+
+  if (embedded) {
+    document.addEventListener("click", (e) => {
+      const a = e.target.closest('a[href^="#"]'); if (!a) return;
+      const target = document.querySelector(a.getAttribute("href")); if (!target) return;
+      e.preventDefault(); target.scrollIntoView({ behavior: reduceMotion ? "instant" : "smooth", block: "start" });
+    });
+  }
 
   /* ---------- Footer ---------- */
   const year = $("#year");
